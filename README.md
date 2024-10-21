@@ -10,7 +10,8 @@
 
 # En el archivo vagrantfile la configuramos de la siguiente manera
 
-    config.ssh.insert_key = false
+    config.vm.box = "debian/bookworm64"
+
 
     config.vm.define "venus" do |venus|
         venus.vm.hostname = "venus.deaw.test"
