@@ -122,3 +122,27 @@
          };
         
     };
+
+## configuraremos los alias en el maestro 
+
+    sudo nano /etc/bind/db.sistema.test
+
+### y añadiremos los registros
+
+    ns1     IN  CNAME   tierra.sistema.test.
+    ns2     IN  CNAME   venus.sistema.test.
+    mail    IN  CNAME   marte.sistema.test.
+
+## El equipo marte.sistema.test. actuará como servidor de correo del dominio de correo sistema.test.
+
+### entramos al archivo de sistema.test
+
+    sudo nano /etc/bind/db.sistema.test
+
+### y añadiremos el registro para el alias de mail
+
+    mail    IN      CNAME   marte.sistema.test.
+
+### y reiniciaremos 
+
+    sudo systemctl restart bind9
