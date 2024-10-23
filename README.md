@@ -104,3 +104,21 @@
        file "/var/cache/bind/db.192";
        masters { 192.168.57.103; }; // IP del servidor maestro
     };
+
+## en los archivos named.conf.options de vens y tierra para ajustar el tiempo en caché de las respuestas negativas de las zonas a 2 horas
+
+    options {
+     
+     max-ncache-ttl 7200;
+    
+    };
+
+## en el mismo archivo de ambas maquinas las consultas que reciba el servidor para la que no está autorizado, deberá reenviarlas
+
+    options {
+         
+         forwarders {
+         208.67.222.222; 
+         };
+        
+    };
