@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "debian/bookworm64"
 
-    config.vbguest.auto_update = false
+    
 
     config.vm.define "venus" do |venus|
       venus.vm.hostname = "venus.deaw.test"
